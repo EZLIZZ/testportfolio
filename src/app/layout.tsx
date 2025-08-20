@@ -1,15 +1,26 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+import { Quicksand } from "next/font/google";
+import { ABeeZee } from "next/font/google";
+import { Bungee } from "next/font/google";
+import Header from "../components/Header"
+const bungee = Bungee({
   subsets: ["latin"],
+  weight: ["400"],
+
+  variable: "--font-bungee",
 });
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+//header font
+const quicksand = Quicksand({
   subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-quicksand", 
+});
+//main font
+const abeezee = ABeeZee({
+  subsets: ["latin"],
+  weight: ["400"], 
+  variable: "--font-abeezee",
 });
 
 export const metadata: Metadata = {
@@ -25,8 +36,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${quicksand.variable} ${abeezee.variable} ${bungee.variable}`}
       >
+        <Header />
         {children}
       </body>
     </html>
