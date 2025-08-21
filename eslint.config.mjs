@@ -5,30 +5,31 @@ import { FlatCompat } from "@eslint/eslintrc";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-const compat = new FlatCompat({
-  baseDirectory: __dirname,
-});
+const compat = new FlatCompat({ baseDirectory: __dirname });
 
-const eslintConfig = [
-  // Next.js defaults
-  ...compat.extends("next/core-web-vitals", "next/typescript"),
-
-  // Your overrides
+export default [
+  // ⬇️ GLOBAL IGNORES (must be first)
   {
     ignores: [
       "node_modules/**",
       ".next/**",
-      "src/prisma-client/**",   // 👈 ignore Prisma generated files
+      "src/prisma-client/**",     // <-- your generated Prisma client
+      "**/.vercel/**",
+      "**/dist/**",
+      "**/build/**",
     ],
+  },
+
+  // Next.js presets
+  ...compat.extends("next/core-web-vitals", "next/typescript"),
+
+  // (Optional) safety net: if the folder ever gets included, silence the rules
+  {
+    files: ["src/prisma-client/**"],
     rules: {
-      "@typescript-eslint/no-require-imports": "off", // allow require in generated code
-      "@typescript-eslint/no-empty-object-type": "off", // Prisma sometimes generates {}
-      "@typescript-eslint/no-unused-vars": [
-        "warn",
-        { argsIgnorePattern: "^_", varsIgnorePattern: "^_" },
-      ],
+      "@typescript-eslint/no-require-imports": "off",
+      "@typescript-eslint/no-unused-vars": "off",
+      "@typescript-eslint/no-empty-object-type": "off",
     },
   },
 ];
-
-export default eslintConfig;
