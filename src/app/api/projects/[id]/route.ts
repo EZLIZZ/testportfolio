@@ -25,7 +25,6 @@ export async function GET(_: Request, ctx: RouteCtx) {
 export async function PUT(req: Request, ctx: RouteCtx) {
   const { id } = await ctx.params
 
-  // Parse JSON safely without using `any`
   let parsed: unknown
   try {
     parsed = await req.json()
