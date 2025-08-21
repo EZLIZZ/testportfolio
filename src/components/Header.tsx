@@ -135,7 +135,7 @@ function NavBar({ isSticky }: { isSticky: boolean }) {
           </Link>
         </div>
 
-        {/* Mobile: menu button + Sheet */}
+        {/* Mobile */}
         <div className="md:hidden ml-auto ">
          <Sheet>
   <SheetTrigger asChild>

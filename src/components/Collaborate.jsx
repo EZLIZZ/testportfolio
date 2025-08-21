@@ -9,7 +9,7 @@ export default function Collaborate() {
         className="absolute inset-0 h-full w-full object-cover z-0"
       />
 
-      {/* Optional dark overlay for readability */}
+      {/*overlay for readability */}
       <div className="absolute inset-0 bg-black/40 z-10" />
 
       {/* Content on top */}

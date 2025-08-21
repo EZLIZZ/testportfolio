@@ -4,8 +4,7 @@ import { Quicksand } from "next/font/google";
 import { ABeeZee } from "next/font/google";
 import { Bungee } from "next/font/google";
 import Header from "../components/Header";
-// if you set up the alias: import { ActiveSectionProvider } from "@/contexts/active-section";
-import { ActiveSectionProvider } from "../contexts/active-section"; // ← use relative if no alias
+import { ActiveSectionProvider } from "../contexts/active-section"; 
 
 const bungee = Bungee({
   subsets: ["latin"],
@@ -35,7 +34,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="scroll-smooth">
-      {/* smooth hash scrolling */}
       <body
         className={`${quicksand.variable} ${abeezee.variable} ${bungee.variable}`}
       >

@@ -28,7 +28,7 @@ export function ActiveSectionProvider({
 }) {
   const [activeId, setActiveId] = useState<string>(ids[0] ?? "");
 
-  // IntersectionObserver: mark a section active when it passes a center band
+  // IntersectionObserver to track active section
   useEffect(() => {
     if (!("IntersectionObserver" in window)) return;
     const els = ids
@@ -45,7 +45,7 @@ export function ActiveSectionProvider({
       },
       {
         root: null,
-        // center band (tweak to taste)
+        
         rootMargin: "-45% 0px -45% 0px",
         threshold: [0, 0.25, 0.5, 0.75, 1],
       }
@@ -55,7 +55,7 @@ export function ActiveSectionProvider({
     return () => io.disconnect();
   }, [ids]);
 
-  // Sync with URL hash (on load / manual changes)
+  // Sync with URL hash 
   useEffect(() => {
     const applyHash = () => {
       const hash = window.location.hash.replace("#", "");
@@ -66,7 +66,7 @@ export function ActiveSectionProvider({
     return () => window.removeEventListener("hashchange", applyHash);
   }, [ids]);
 
-  // Smooth scroll helper; relies on CSS scroll-margin-top to avoid sticky header overlap
+  // Smooth scroll helper
   const scrollToId = (id: string, opts?: { block?: "start" | "center" }) => {
     const el = document.getElementById(id);
     if (!el) return;

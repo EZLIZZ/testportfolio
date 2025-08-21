@@ -1,0 +1,23 @@
+// prisma/schema.prisma
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../src/prisma-client"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL") // CLI/migrations use this
+}
+
+model Project {
+  id        String   @id @default(cuid())
+  title     String // required
+  subtitle  String? // optional
+  summary   String?  @db.Text // optional long text
+  imageUrl  String? // optional (store URL/path)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([title])
+}
