@@ -13,7 +13,7 @@ export default [
     ignores: [
       "node_modules/**",
       ".next/**",
-      "src/prisma-client/**",     // <-- your generated Prisma client
+      "src/prisma-client/**",    
       "**/.vercel/**",
       "**/dist/**",
       "**/build/**",
