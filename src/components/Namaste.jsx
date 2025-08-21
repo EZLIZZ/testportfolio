@@ -1,14 +1,22 @@
+import { MoveRight } from "lucide-react";
+
 export default function Namaste() {
   return (
-    <section className="namaste-section max-w-7xl m-auto h-[90vh] ">
-      <div className="max-w-2xl  font-main text-white space-y-20">
-        <p className="text-5xl/14">Namaste</p>
+    <section
+      id="namaste"
+      className="namaste-section max-w-7xl m-auto  px-10 py-20 "
+    >
+      <div className="max-w-4xl  font-main text-white">
+        <p className="text-5xl/14">NAMASTE 🙏</p>
+        <p className="text-5xl/14">I'M JOHN DOE</p>
         <div className="px-10">
-          <p className="font-extralight">
+          <p className="[overflow-wrap:anywhere]  font-extralight mt-5">
             Tell about your intro and story
-            ...........................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+            ...........................................................................................................................................................................................................................................................................................................................
           </p>
-          <button className="btn mt-20"> Download resume</button>
+          <p className="mt-10 flex items-center text-3xl cursor-pointer hover:underline">
+            Let's know more <MoveRight className="h-9 w-9 pl-2 " />
+          </p>
         </div>
       </div>
     </section>

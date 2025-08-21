@@ -51,7 +51,10 @@ export default function HomeSection() {
   }, []);
 
   return (
-    <section className="home-section relative h-[90vh] w-full overflow-hidden">
+    <section
+      id="home"
+      className="home-section relative h-[90vh] w-full overflow-hidden"
+    >
       {/* main moon image  */}
       <img
         ref={moonRef}
@@ -69,7 +72,11 @@ export default function HomeSection() {
             Hi, I am <span className="font-semibold">John Doe</span>, Welcome to
             my portfolio.
           </p>
-          <button className="btn mt-20"> Download resume</button>
+          <button
+            className="btn mt-20 "
+          >
+            Download resume
+          </button>
         </div>
       </div>
     </section>

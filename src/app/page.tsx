@@ -2,6 +2,7 @@
  import Work from "@/components/Work";
  import Doubt from "@/components/Doubt";
  import Namaste from "@/components/Namaste";
+ import Collaborate from "@/components/Collaborate";
   export default function Home() {
   return (
   <>
@@ -9,6 +10,7 @@
   <Work />
   <Doubt />
   <Namaste />
+  <Collaborate />
    </>
   );
 }

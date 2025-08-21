@@ -11,8 +11,11 @@ const data = [
 ]
 
 export default function Work() {
+ 
   return (
-    <section className="work-section text-white font-quicksand">
+    <section
+    id="work" className="work-section text-white font-quicksand scroll-mt-32">
+
   <div className="max-w-7xl mx-auto flex justify-between items-center">
     {/* difference design */}
     <div className="flex justify-center items-center  bg-[#242424] font-sans ml-24">
@@ -27,7 +30,7 @@ export default function Work() {
     </div>
 
     {/* portfolio */}
-    <div className="flex items-center text-3xl">
+    <div className="flex items-center text-3xl cursor-pointer hover:underline">
       See the Portfolio
       <MoveRight className="h-9 w-9 ml-2" />
     </div>
@@ -36,7 +39,7 @@ export default function Work() {
    {data.map((item) => (
   <div
   key={item.id}
-  className="relative border border-gray-600 rounded-2xl shadow-2xl overflow-hidden h-96 w-80"
+  className="relative border border-white/10 rounded-2xl shadow-2xl overflow-hidden h-96 w-80"
 >
   {/* Background image box inset by L/B padding */}
   <div
@@ -47,10 +50,10 @@ export default function Work() {
   </div>
 
   {/* Text content pinned bottom-left to match padding */}
-  <div className="relative z-10 text-white h-full flex flex-col justify-end pl-5 pb-5">
-    <p className="text-sm">{item.subtitle}</p>
-    <p className="text-xl font-bold">{item.title}</p>
-    <p className="underline cursor-pointer">View Detail</p>
+  <div className="relative z-10 text-white/80 h-full flex flex-col justify-end pl-5 pb-5">
+    <p className="w-fit px-2 py-1  rounded-2xl bg-[linear-gradient(92.62deg,_rgba(34,34,34,0.6)_-5.03%,_rgba(223,167,165,0.6)_49.44%,_rgba(173,124,111,0.6)_108.64%)] text-sm">{item.subtitle}</p>
+    <p className="text-xl ">{item.title}</p>
+    <p className="text-sm cursor-pointer flex hover:underline">View Detail<MoveRight className="pl-2" /> </p>
   </div>
 </div>
 

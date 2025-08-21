@@ -3,23 +3,23 @@ import "./globals.css";
 import { Quicksand } from "next/font/google";
 import { ABeeZee } from "next/font/google";
 import { Bungee } from "next/font/google";
-import Header from "../components/Header"
+import Header from "../components/Header";
+// if you set up the alias: import { ActiveSectionProvider } from "@/contexts/active-section";
+import { ActiveSectionProvider } from "../contexts/active-section"; // ← use relative if no alias
+
 const bungee = Bungee({
   subsets: ["latin"],
   weight: ["400"],
-
   variable: "--font-bungee",
 });
-//header font
 const quicksand = Quicksand({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
-  variable: "--font-quicksand", 
+  variable: "--font-quicksand",
 });
-//main font
 const abeezee = ABeeZee({
   subsets: ["latin"],
-  weight: ["400"], 
+  weight: ["400"],
   variable: "--font-abeezee",
 });
 
@@ -30,16 +30,20 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
-    <html lang="en">
+    <html lang="en" className="scroll-smooth">
+      {/* smooth hash scrolling */}
       <body
         className={`${quicksand.variable} ${abeezee.variable} ${bungee.variable}`}
       >
-        <Header />
-        {children}
+        {/* Provide active section state to Header + all pages */}
+        <ActiveSectionProvider ids={["home", "work", "namaste", "collaborate"]}>
+          <Header />
+          {children}
+        </ActiveSectionProvider>
       </body>
     </html>
   );
