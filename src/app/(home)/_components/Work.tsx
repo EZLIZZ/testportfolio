@@ -80,7 +80,7 @@ export default function Work() {
             return (
               <div
                 key={item.id}
-                className="relative border border-white/10 rounded-2xl shadow-2xl overflow-hidden h-64 md:h-96 w-full md:w-80 mx-auto md:mx-0"
+                className="relative border border-white/10 rounded-2xl shadow-2xl overflow-hidden h-64 sm:h-full  w-full  mx-auto md:mx-0"
               >
                 {/* Background image */}
                 <div
@@ -105,6 +105,17 @@ export default function Work() {
               </div>
             );
           })}
+          <div className='h-64 md:h-96 w-full mx-auto md:mx-0 rounded-2xl border border-white/10 flex flex-col justify-center items-center space-y-10'>
+            <p className="text-center text-white/80 text-2xl font-main">
+             Couldn&apos;t find what you need?
+            </p>
+            <p className='text-center text-white/50 '>
+              Suggest a tutorial, course or video. I read seek  feedback/suggestion!
+            </p>
+            <button className="w-fit px-10 py-2 rounded-full bg-[linear-gradient(92.62deg,_rgba(34,34,34,0.6)_-5.03%,_rgba(223,167,165,0.6)_49.44%,_rgba(173,124,111,0.6)_108.64%)] flex text-sm">
+                     Request Now <MoveRight />
+                    </button>
+          </div>
       </div>
     </section>
   );

@@ -1,4 +1,4 @@
-// src/app/api/projects/[id]/route.ts
+
 import { NextResponse } from 'next/server'
 import prisma from '@/lib/prisma'
 
@@ -38,7 +38,7 @@ export async function PUT(req: Request, ctx: RouteCtx) {
 
   const body = parsed as Record<string, unknown>
 
-  // Validate each field and build a typed update object
+  // Validate each field
   const data: ProjectUpdate = {}
 
   if ('title' in body) {

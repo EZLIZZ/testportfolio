@@ -3,8 +3,7 @@ import "./globals.css";
 import { Quicksand } from "next/font/google";
 import { ABeeZee } from "next/font/google";
 import { Bungee } from "next/font/google";
-import Header from "../components/Header";
-import { ActiveSectionProvider } from "../contexts/active-section"; 
+
 
 const bungee = Bungee({
   subsets: ["latin"],
@@ -37,11 +36,9 @@ export default function RootLayout({
       <body
         className={`${quicksand.variable} ${abeezee.variable} ${bungee.variable}`}
       >
-        {/* Provide active section state to Header + all pages */}
-        <ActiveSectionProvider ids={["home", "work", "namaste", "collaborate"]}>
-          <Header />
+        
           {children}
-        </ActiveSectionProvider>
+      
       </body>
     </html>
   );

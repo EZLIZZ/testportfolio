@@ -4,7 +4,7 @@ import prisma from '@/lib/prisma';
 
 export const runtime = 'nodejs';
 
-// GET /api/projects  -> list all projects (newest first)
+// GET /api/projects (newest first)
 export async function GET() {
   const rows = await prisma.project.findMany({
     orderBy: { updatedAt: 'desc' },
@@ -12,7 +12,7 @@ export async function GET() {
   return NextResponse.json(rows);
 }
 
-// POST /api/projects -> create one
+// POST /api/projects 
 export async function POST(req: Request) {
   const body = await req.json().catch(() => ({}));
   if (!body?.title || typeof body.title !== 'string') {

@@ -2,19 +2,19 @@
   "name": "binarytest",
   "version": "0.1.0",
   "private": true,
-   "scripts": {
+  "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-
     "vercel-build": "prisma generate && prisma migrate deploy && next build",
-
     "postinstall": "prisma generate"
   },
   "dependencies": {
     "@prisma/client": "^6.14.0",
     "@radix-ui/react-dialog": "^1.1.15",
+    "@radix-ui/react-label": "^2.1.7",
+    "@radix-ui/react-slot": "^1.2.3",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "gsap": "^3.13.0",
